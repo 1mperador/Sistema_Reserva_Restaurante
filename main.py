@@ -1,42 +1,46 @@
 from pymongo import MongoClient 
 
 con = MongoClient("mongodb://localhost:27017/")
-
 db = con.get_database("sistema")
-
 restaurante = db.get_collection("Restaurante")
-
 usuario = db.get_collection("Usuarios")
-
 reservas = db.get_collection("Reservas")
 
+# filtro pra identificar o restaurante
+filtro = {"_id": "67e5f70f4024726cc6ef6aac"}
 
-re = {
-    "_id":1,
-    "nome":"São Fogos",
-    "endereço":"Rua Borges, 1200, Ferro até Tupi",
-    "capacidade": 200
-}
+#  Atualização
+atualizacao = {"$set": {"numeroDePessoas": 6}}
 
-restaurante.insert_one(re)
+resultado = db.restaurantes.update_one(filtro, atualizacao)
+print(f"Documentos modificados: {resultado.modified_count}")
 
-usu = {
-    "_id":1,
-    "nome":"Dudu",
-    "contato": 33390034
-}
+# restaurante = {
+#     "nome":"Restaurante Delicia",
+#     "endereco":"Rua Principal, 123",
+#     "capacidade":50
+# }
 
-usuario.insert_one(usu)
+# resultado = db.restaurante.insert_one(restaurante)
+# print(f"Restaurante criado com ID:{resultado.inserted_id}") # 
 
-res = {
-    "data": 12/2,
-    "hora": "20:00",
-    "nº de pessoas": 40,
-    "ID do restaurante":1,
-    "ID do usuario":1,
-}
+# usuario = {
+#     "nome":"Pablo",
+#     "contato":"+55 19 99999-9999"
+# }
 
-reservas.insert_one(res)
+# resultado = db.usuario.insert_one(usuario)
+# print(f"Usuario criado com ID: {resultado.inserted_id}") 
+
+# reserva = {
+#     "data":"2025-04-28",
+#     "hora":"19:00",
+#     "numeroDePessoas":4,
+#     "restauranteID":resultado.inserted_id,
+#     "usuarioID":resultado.inserted_id
+# }
+
+# resultado_reserva = db.reserva.insert_one(reserva)
+# print(f"Reserva criada com ID: {resultado_reserva.inserted_id}")
 
 
-#  id faço a mennor ideia de como faz :)
