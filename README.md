@@ -1,2 +1,16 @@
 # Sistema_Reserva_Restaurante
- Um sistema para gerenciar reservar em restaurantes.
+```
+ ____  _     _                       
+/ ___|(_)___| |_ ___ _ __ ___   __ _ 
+\___ \| / __| __/ _ \ '_ ` _ \ / _` |            CRUD : Sistema de Reserva de restaurantes, com interface grafica
+ ___) | \__ \ ||  __/ | | | | | (_| |            OS : Linux
+|____/|_|___/\__\___|_| |_| |_|\__,_|            Tecnologias : Python, Flask, MongoDB                         
+     ____            __                               __     
+    / __ \___  _____/ /_____ ___  ___________ _____  / /____ 
+   / /_/ / _ \/ ___/ __/ __ `/ / / / ___/ __ `/ __ \/ __/ _ \
+  / _, _/  __(__  ) /_/ /_/ / /_/ / /  / /_/ / / / / /_/  __/
+ /_/ |_|\___/____/\__/\__,_/\__,_/_/   \__,_/_/ /_/\__/\___/ 
+                                                             
+
+```
+ 
