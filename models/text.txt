@@ -1,0 +1,2 @@
+Modulo de organização de função do mongodb (adicionar ou buscar informações no banco)
+

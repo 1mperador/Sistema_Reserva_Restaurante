@@ -1,5 +1,19 @@
 from pymongo import MongoClient 
+from flask import Flask, render_template
 
+app = Flask(__name__)
+
+@app.route("/base")
+def exibir_home():
+    # Parte principal no projeto 
+    return render_template("base.html")
+  
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+#  Sistema do MongoDB
 con = MongoClient("mongodb://localhost:27017/")
 db = con.get_database("sistema")
 restaurante = db.get_collection("Restaurante")
@@ -14,6 +28,7 @@ atualizacao = {"$set": {"numeroDePessoas": 6}}
 
 resultado = db.restaurantes.update_one(filtro, atualizacao)
 print(f"Documentos modificados: {resultado.modified_count}")
+
 
 # restaurante = {
 #     "nome":"Restaurante Delicia",
